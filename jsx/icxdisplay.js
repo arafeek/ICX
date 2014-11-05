@@ -187,7 +187,7 @@ var ICXWorld = React.createClass({
         var screenNames = ICX.screens.map(function(screen) {return screen.name})
         if (screenNames.indexOf(currScreen) < 0) {
             // currScreen = 'home'
-            return Events.pub('/ui/icx/screen', {"view.icx.screen": 'home'})
+            return Events.pub('/ui/icx/screen', {"view.icx.screen": 'home'}) || <div></div>
         }
 
         var borderWidth = Math.floor(ICX.calculated.sideBorder)+'px'

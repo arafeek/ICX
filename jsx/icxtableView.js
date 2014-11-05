@@ -34,7 +34,7 @@ var ConversationItem = React.createClass({
     }
 })
 
-var puffContainer = React.createClass({
+var PuffContainer = React.createClass({
 
     render: function() {
         var puffs = this.props.content.map(function (puff) {
@@ -91,7 +91,7 @@ var TableView = React.createClass({
     },
 
     // Note: Instead of loading the LIMIT of puffs
-    // We will try to load the ACTUAL number of puffs in puffContainer
+    // We will try to load the ACTUAL number of puffs in PuffContainer
     // componentWillMount: function() {
     //     Events.pub('ui/event', {
     //         'view.table.loaded': CONFIG.initLoadBatchSize
@@ -142,7 +142,7 @@ var TableView = React.createClass({
                 </div>
                 <span style={refreshStyle}><a onClick={this.forceRefreshPuffs}><i ref="refresh" className="fa fa-refresh small" /></a></span>
 				<ViewFilters />
-                <puffContainer content={this.getContent()} key="messages"/>
+                <PuffContainer content={this.getContent()} key="messages"/>
 
                 <ICXInlineReply convoId={puffworldprops.view.convoId} key={puffworldprops.view.convoId} />
                 <ViewLoadMore convoId={puffworldprops.view.convoId} update={puffworldprops.ICX.hasShells} loading={ICX.loading}/>
